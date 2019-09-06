@@ -1,0 +1,57 @@
+{
+   "author" : "Maroš Kollár",
+   "category" : "automation_basic",
+   "defaults" : {
+      "description" : "__m_descr__",
+      "title" : "__m_title__"
+   },
+   "dependencies" : [
+      "Cron",
+      "BaseModule"
+   ],
+   "homepage" : "https://github.com/maros/Zway-Presence/",
+   "icon" : "icon.png",
+   "maturity" : "stable",
+   "moduleName" : "Presence",
+   "options" : {
+      "fields" : {
+         "nightEnd" : {
+            "dateFormat" : "HH:mm",
+            "label" : "__night_end_label__",
+            "maskString" : "99:99",
+            "order" : 2,
+            "placeholder" : "__time_format__",
+            "type" : "time"
+         },
+         "nightStart" : {
+            "dateFormat" : "HH:mm",
+            "helper" : "__night_time_helper__",
+            "label" : "__night_start_label__",
+            "maskString" : "99:99",
+            "order" : 1,
+            "placeholder" : "__time_format__",
+            "type" : "time"
+         }
+      }
+   },
+   "repository" : {
+      "source" : "https://github.com/maros/Zway-Presence",
+      "type" : "git"
+   },
+   "schema" : {
+      "properties" : {
+         "nightEnd" : {
+            "format" : "time",
+            "type" : "string"
+         },
+         "nightStart" : {
+            "format" : "time",
+            "type" : "string"
+         }
+      },
+      "required" : true,
+      "type" : "object"
+   },
+   "singleton" : true,
+   "version" : 1.1
+}

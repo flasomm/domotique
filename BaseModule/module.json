@@ -1,0 +1,25 @@
+{
+   "author" : "Maroš Kollár",
+   "category" : "developers_stuff",
+   "defaults" : {
+      "description" : "__m_descr__",
+      "title" : "__m_title__"
+   },
+   "dependencies" : [],
+   "homepage" : "https://github.com/maros/Zway-BaseModule/",
+   "icon" : "icon.png",
+   "maturity" : "stable",
+   "moduleName" : "BaseModule",
+   "options" : {
+      "fields" : {}
+   },
+   "repository" : {
+      "source" : "https://github.com/maros/Zway-BaseModule",
+      "type" : "git"
+   },
+   "schema" : {
+      "properties" : {}
+   },
+   "singleton" : true,
+   "version" : "1.10"
+}

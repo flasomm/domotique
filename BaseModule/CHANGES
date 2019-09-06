@@ -1,0 +1,61 @@
+1.10 2017 Jan 22, Sun
+    * Improved period search: Close gaps
+    * Update documentation
+    * Improved device search to allow multiple search values
+    * Internal changes
+
+1.09 2016 Jul 03, Sun
+    * Cleanup and add fallbacks
+    * Check for undefinedness
+    * Use correct key to access last update time
+
+1.08 2016 Apr 20, Wed
+    * Add processDevices helper
+    * Improve sanity checks
+    * Alert on unlikely level changes
+    * Fix regexp comparison
+    * Fix device search
+    * Update time parser to handle HH:MM:SS am/pm
+    * Refactor comparison
+    * Fix getDevice by ID
+    * Update presence probeType
+
+1.07 2016 Mar 18, Fri
+    * Add base image path
+
+1.06 2016 Mar 08, Tue
+    * Fix superfluous argument to vDev.set
+    * Also accept IDs for getDevice and getDevice value
+    * processDeviceList now also accepts list of object or single object/id
+    * Update installation howto
+
+1.05 2016 Feb 20, Sat
+    * Fix module.json
+
+1.04 2016 Feb 15, Mon
+    * Add compare helper
+    * Add doc link
+
+1.03 2016 Jan 08, Fri
+    * Rename title/description key to make module work in appstore
+    * Clarify documentation
+    * modify:metrics:level events
+    * Update documentation
+    * Emit event on real change
+    * Fix period parser
+
+1.02 2016 Jan 02, Sat
+    * Clarify log messages
+    * Coerce for comparison
+    * Update homepage
+    * Use constructor.name instead of getName to fetch class name
+    * Update readme
+
+1.01 2015 Dec 29, Tue
+    * Fix time period calculation
+    * German translation
+    * Delayed lastLevel set
+    * Fix duplicate error message
+
+1.00 2015 Dec 26, Sat
+    * Initial release

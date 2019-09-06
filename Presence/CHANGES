@@ -1,0 +1,51 @@
+1.1 2016 Apr 20, Wed
+    * Log day/night times
+    * Fix time fields in module.json
+    * Set probeType
+    * Use imagePath from BaseModule
+
+1.09 2016 Mar 06, Sun
+    * Time not required anymore
+    * Add time helper
+    * Do not switch day/night if no time is configured
+    * Update installation howto
+    * Add doc link
+
+1.08 2016 Jan 18, Mon
+    * Declare cron dependency
+    * Rename title/description key to make module work in appstore
+    * Handle timeouts via cron
+    * Update homepage and readme
+
+1.07 2015 Dec 29, Tue
+    * Fix date calculation
+
+1.06 2015 Dec 27, Sun
+    * Documentation
+    * Use BaseModule
+    * Add log messages
+
+1.05 2015 Dec 19, Sat
+    * Emit switch events
+    * Fix presence switches
+    * Unify variable names
+    * cleanup jshint issues
+    * Set probeType instead of metrics:probeTitle
+    * Update category
+    * dd comehome and leave events
+
+1.04 2015 Nov 15, Sun
+    * Clarify presence modes in documentation
+    * Cleanups
+
+1.03 2015 Nov 03, Tue
+    * Fix setting presence modes
+
+1.02 2015 Nov 01, Sun
+    * Time placeholder
+    * Fix time parser
+    * Set field order
+    * Translate
+
+1.01 2015 Oct 26, Mon
+    * Initial release
