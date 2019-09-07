@@ -7,7 +7,6 @@
     "device": "sensorBinary",
     "scanInterval": 1,
     "scanTimeout": 2,
-    "getter_sensor": "",
     "getterPollInterval": 0,
     "updateOnAction": false
   },
@@ -60,7 +59,16 @@
     "properties": {
       "iconSensorBinary": {
         "type": "string",
-        "enum": ["alarm", "motion", "smoke", "co", "flood","cooling","tamper","door"],
+        "enum": [
+          "alarm",
+          "motion",
+          "smoke",
+          "co",
+          "flood",
+          "cooling",
+          "tamper",
+          "door"
+        ],
         "default": "alarm",
         "required": true,
         "dependencies": "deviceType"
