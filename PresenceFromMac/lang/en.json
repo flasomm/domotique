@@ -1,0 +1,13 @@
+{
+  "m_descr" : "This module manage presence states according to an host <MAC address><ip> scan response.",
+  "m_title" : "Presence from MAC",
+  "l_icon":"Icon",
+  "mac_address_to_scan_label" : "Which MAC address to scan for:",
+  "mac_address_to_scan_helper": "MAC Address to scan for if arp-scan ok presence if arp-scan ko abscence.",
+  "ip_to_scan_label" : "Which IP to ping for:",
+  "ip_to_scan_helper": "Ip to ping for if ping ok presence if ping ko abscence.",
+  "l_dev" : "Presence virtual device to control:",
+  "scan_interval" : "Intervales between 2 consecutive ping: (in minutes)",
+  "scan_timeout" : "Scan timeout: (in seconds)",
+  "title_presenceFromMac" : "PresenceFromMAC"
+}

@@ -1,0 +1,10 @@
+{
+   "m_descr" : "This module manage presence states according to an host ping response.<br>Check <a href=https://github.com/Nander2/Zway-PingPresence/>github.com/Nander2/Zway-PingPresence/</a> for detailed documentation.",
+   "m_title" : "Ping Presence state",
+   "ip_to_ping_label" : "Which IP to ping for:",
+   "ping_interval" : "Intervales between 2 consecutive ping: (in minutes)",
+   "l_dev" : "Presence virtual device to control:",
+   "title_pingPresence" : "PingPresence",
+   "ip_to_ping_helper": "Ip to ping for if ping ok presence if ping ko abscence.",
+   "ping_timeout" : "Ping timeout: (in seconds)"
+}

@@ -1,0 +1,78 @@
+{
+   "author" : "Gwenhael Le Normand",
+   "category" : "automation_basic",
+   "defaults" : {
+      "description" : "__m_descr__",
+      "title" : "__m_title__",
+      "device" : "",
+      "pingInterval" : 1,
+      "pingTimeout" : 2
+   },
+   "dependencies" : [
+      "Presence",
+      "Cron",
+      "BaseModule"
+   ],
+   "homepage" : "https://github.com/Nander2/Zway-PingPresence/",
+   "icon" : "icon.png",
+   "maturity" : "stable",
+   "moduleName" : "PingPresence",
+   "options" : {
+      "fields" : {
+		 "ipToPing" : {
+			"helper" : "__ip_to_ping_helper__",
+			"label" : "__ip_to_ping_label__",
+                        "order" : 1,
+                        "type" : "ipv4"
+		 },
+                 "device": {
+                        "label": "__l_dev__",
+                        "datasource": "namespaces",
+                        "field": "optionLabels",
+                        "optionLabels": "namespaces:devices_switchBinary:deviceName",
+			"order" : 4
+                 },
+		 "pingInterval" : {	
+			"label" : "__ping_interval__",
+			"order" : 2,
+                        "type" : "integer"
+		 },
+		 "pingTimeout" : {
+                        "label" : "__ping_timeout__",
+                        "order" : 3,
+                        "type" : "integer"
+                 }
+      }
+   },
+   "repository" : {
+      "source" : "https://github.com/Nander2/Zway-PingPresence/",
+      "type" : "git"
+   },
+   "schema" : {
+      "properties" : {
+	 "device": {
+            "field": "enum",
+            "datasource": "namespaces",
+            "enum": "namespaces:devices_switchBinary:deviceId",
+            "required": true
+            },
+         "ipToPing" : {
+            "format": "ip-address",
+            "type" : "string",
+            "required" : true
+         },
+         "pingInterval" : {
+            "type" : "integer",
+            "required" : true
+         },
+         "pingTimeout" : {
+            "type" : "integer",
+            "required" : true
+         }
+      },
+      "required" : true,
+      "type" : "object"
+   },
+   "singleton" : true,
+   "version" : 1.0
+}
