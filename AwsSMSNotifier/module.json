@@ -1,0 +1,53 @@
+{
+  "dependencies": [],
+  "singleton": false,
+  "category": "notifications",
+  "author": "Z-Wave.Me",
+  "homepage": "http://razberry.z-wave.me",
+  "icon": "icon.png",
+  "moduleName": "MailNotifier",
+  "version": "1.0.0",
+  "maturity": "stable",
+  "repository": {
+    "type": "git",
+    "source": "https://github.com/Z-Wave-Me/home-automation"
+  },
+  "defaults": {
+    "title": "__m_title__",
+    "description": "__m_descr__",
+    "hide": false,
+    "phone_number": ""
+  },
+  "schema": {
+    "type": "object",
+    "properties": {
+      "hide" : {
+        "type" : "boolean",
+        "required" : false
+      },
+      "sms_message": {
+        "required":true
+      },
+      "phone_number": {
+        "required": true
+      }
+    }
+  },
+  "options": {
+    "fields": {
+      "hide": {
+        "type": "checkbox",
+        "rightLabel":"__rl_hidden__"
+      },
+      "sms_message": {
+        "type":"textarea",
+        "label": "__l_sms_message__",
+        "helper": "__h_sms_message__"
+      },
+      "phone_number": {
+        "label": "__l_phone_number__",
+        "helper": "__h_phone_number__"
+      }
+    }
+  }
+}

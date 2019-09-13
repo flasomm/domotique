@@ -1,0 +1,1 @@
+sudo arp-scan --interface=eth0 -l -g --retry=2 -b 2 -T '58:e2:8f:20:b0:45' | grep 192.168.1.75 | wc -l

@@ -1,0 +1,9 @@
+{
+  "m_title": "AWS SMS Notifier",
+  "m_descr": "This app allows you to send notifications by SMS. <br/> A virtual device is generated, that will send you a SMS to the deposited phone number with each command 'on'. It use AWS SNS to send the SMS.<br/> With the checkbox you are able to hide the widget in elements view.",
+  "rl_hidden":"Hide the created widget on elements view.",
+  "l_sms_message":"Message",
+  "h_sms_message":"Content of the SMS.",
+  "l_phone_number": "Phone number",
+  "h_phone_number": "The phone number, that should receive the notifications."
+}

@@ -31,7 +31,8 @@ PresenceFromMac.prototype.init = function (config) {
     this.deviceId = 'Presence_From_Mac_' + this.config.device + '_' + this.id;
     var self = this;
     self.log('Initializing DeviceId ' + this.deviceId);
-    self.controller.devices.create({
+
+    var deviceObject = self.controller.devices.create({
         deviceId: this.deviceId,
         defaults: {
             metrics: {
@@ -52,6 +53,9 @@ PresenceFromMac.prototype.init = function (config) {
         }
     });
 
+    var status = deviceObject.get('metrics:level');
+    deviceObject.set('metrics:icon', self.imagePath + '/presence_' + status + '.png');
+
     // add cron schedule every self.config['pingInterval'] minutes
     this.controller.emit('cron.addTask', 'presenceFromMac.poll', {
         minute: [0, 59, self.config['scanInterval']],
@@ -68,8 +72,8 @@ PresenceFromMac.prototype.init = function (config) {
             ' -T ' + self.config['macAddressToScan'] +
             ' | grep ' + self.config['ipToScan'] + ' | wc -l');
 
-        if (code !== null && code[0] > 0) {
-            self.scanResult = 1;
+        if (code !== null) {
+            self.scanResult = code[1];
             self.isPresent();
         }
     });
@@ -95,15 +99,19 @@ PresenceFromMac.prototype.isPresent = function () {
     var vDev = this.controller.devices.get(this.deviceId);
 
     if (vDev) {
+        var newStatus = 'off';
         var actualStatus = vDev.get('metrics:level');
 
         if (self.scanResult > 0) {
-            actualStatus = 'on';
+            newStatus = 'on';
         }
 
-        self.log('Set presence to ' + actualStatus);
-        vDev.set('metrics:level', actualStatus);
-        vDev.set('metrics:icon', self.imagePath + '/' + 'presence_' + actualStatus + '.png');
+        if (actualStatus !== newStatus) {
+            self.log('Set presence to ' + newStatus);
+            vDev.set('metrics:level', newStatus);
+            vDev.set('metrics:icon', self.imagePath + '/presence_' + newStatus + '.png');
+            vDev.performCommand(newStatus);
+        }
 
     } else {
         self.log('PresenceFromMac can\'t find ' + self.config.device + ' device');

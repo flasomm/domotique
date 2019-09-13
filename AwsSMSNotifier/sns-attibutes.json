@@ -1,0 +1,10 @@
+{
+  "DefaultSenderID": {
+    "DataType": "String",
+    "StringValue": "ZWayNotif"
+  },
+  "DefaultSMSType": {
+    "DataType": "String",
+    "StringValue": "Promotional"
+  }
+}
