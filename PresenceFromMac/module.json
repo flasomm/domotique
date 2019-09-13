@@ -14,7 +14,7 @@
     "Cron",
     "BaseModule"
   ],
-  "homepage": "https://github.com/Nander2/Zway-PresenceFromMac/",
+  "homepage": "https://github.com/flasomm/z-way-presence-from-mac",
   "icon": "icon.png",
   "maturity": "stable",
   "moduleName": "PresenceFromMac",
@@ -52,7 +52,7 @@
     }
   },
   "repository": {
-    "source": "https://github.com/Nander2/Zway-PresenceFromMac/",
+    "source": "https://github.com/flasomm/z-way-presence-from-mac/",
     "type": "git"
   },
   "schema": {

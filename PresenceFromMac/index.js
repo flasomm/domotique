@@ -1,6 +1,6 @@
 /*** Presence From Mac Z-Way module *******************************************
 
- Version: 1.0
+ Version: 0.1.0
  (c) Fabrice Sommavilla, 2019
  -----------------------------------------------------------------------------
  Author: Fabrice Sommavilla
@@ -47,7 +47,7 @@ PresenceFromMac.prototype.init = function (config) {
                 scaleTitle: ''
             },
             handler: function (command, args) {
-                self.log('#####================>>>>> init ARGS ' + command + ' ' + args);
+                self.log('================>> init ' + command + ' ' + args);
             },
             moduleId: this.id
         }
@@ -56,7 +56,7 @@ PresenceFromMac.prototype.init = function (config) {
     var status = deviceObject.get('metrics:level');
     deviceObject.set('metrics:icon', self.imagePath + '/presence_' + status + '.png');
 
-    // add cron schedule every self.config['pingInterval'] minutes
+    // add cron schedule every self.config['scanInterval'] minutes
     this.controller.emit('cron.addTask', 'presenceFromMac.poll', {
         minute: [0, 59, self.config['scanInterval']],
         hour: null,
