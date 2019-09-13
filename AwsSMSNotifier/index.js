@@ -54,22 +54,16 @@ AwsSMSNotifier.prototype.init = function (config) {
         overlay: {},
         handler: function (command, args) {
             var smsObject = {};
-            console.log('######===============>>>>>>>>>>>>>> command', command, JSON.stringify(args));
-            console.log('######===============>>>>>>>>>>>>>> self.config', JSON.stringify(self.config));
-
             smsObject.message = self.config.sms_message;
             smsObject.phone_number = self.config.phone_number;
             self.collectMessages.push(smsObject);
 
-            console.log('######===============>>>>>>>>>>>>>> smsObject', JSON.stringify(smsObject));
             // TODO check for SMS number
             if (!smsObject.phone_number || smsObject.phone_number === '') {
                 self.addNotification('error', 'Missing receiver phone number. Please check your configuration in the following app instance: ' +
                     self.config.title, 'module');
                 return;
             }
-
-            console.log('######===============>>>>>>>>>>>>>> timer', self.timer);
 
             // add delay timer if not existing
             if (!self.timer) {
@@ -129,8 +123,6 @@ AwsSMSNotifier.prototype.sendMessage = function () {
     var self = this;
 
     this.timer = setInterval(function () {
-
-        console.log('######===============>>>>>>>>>>>>>> self.collectMessages', self.collectMessages.length);
 
         if (self.collectMessages.length > 0) {
             const smsObject = self.collectMessages.shift() || {};
