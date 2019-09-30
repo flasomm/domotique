@@ -1,0 +1,207 @@
+{
+   "author" : "Maroš Kollár",
+   "category" : "device_enhancements",
+   "defaults" : {
+      "description" : "__m_descr__",
+      "devices" : [],
+      "hysteresis" : 0.1,
+      "maxTemperature" : 30,
+      "minTemperature" : 15,
+      "mode" : "heat",
+      "scale" : "C",
+      "temperatureSensors" : [],
+      "title" : "__m_title__"
+   },
+   "dependencies" : [
+      "BaseModule"
+   ],
+   "homepage" : "https://github.com/maros/Zway-AdvancedThermostatDevice/",
+   "icon" : "icon.png",
+   "maturity" : "stable",
+   "moduleName" : "AdvancedThermostatDevice",
+   "options" : {
+      "fields" : {
+         "devices" : {
+            "fields" : {
+               "item" : {
+                  "datasource" : "namespaces",
+                  "field" : "optionLabels",
+                  "optionLabels" : "namespaces:devices_switchBinary:deviceName",
+                  "type" : "select"
+               }
+            },
+            "helper" : "__devices_helper__",
+            "label" : "__devices_label__",
+            "order" : 4
+         },
+         "hysteresis" : {
+            "helper" : "__hysteresis_helper__",
+            "label" : "__hysteresis_label__",
+            "order" : 7
+         },
+         "maxTemperature" : {
+            "label" : "__max_temperature_label__",
+            "order" : 11
+         },
+         "maxTime" : {
+            "helper" : "__max_time_helper__",
+            "label" : "__max_time_label__",
+            "order" : 8
+         },
+         "minTemperature" : {
+            "label" : "__min_temperature_label__",
+            "order" : 12
+         },
+         "mode" : {
+            "label" : "__mode_label__",
+            "optionLabels" : [
+               "__mode_heat__",
+               "__mode_cool__"
+            ],
+            "order" : 1,
+            "type" : "select"
+         },
+         "pauseTime" : {
+            "helper" : "__pause_time_helper__",
+            "label" : "__pause_time_label__",
+            "order" : 9
+         },
+         "switch" : {
+            "datasource" : "namespaces",
+            "field" : "optionLabels",
+            "helper" : "__switch_helper__",
+            "label" : "__switch_label__",
+            "optionLabels" : "namespaces:devices_switchBinary:deviceName",
+            "order" : 3,
+            "type" : "select"
+         },
+         "temperatureSensors" : {
+            "fields" : {
+               "item" : {
+                  "datasource" : "namespaces",
+                  "field" : "optionLabels",
+                  "optionLabels" : "namespaces:devices_sensorMultilevel:deviceName",
+                  "type" : "select"
+               }
+            },
+            "helper" : "__temperature_sensors_helper__",
+            "label" : "__temperature_sensors_label__",
+            "order" : 5
+         },
+         "thermostat" : {
+            "datasource" : "namespaces",
+            "field" : "optionLabels",
+            "helper" : "__thermostat_helper__",
+            "label" : "__thermostat_label__",
+            "optionLabels" : "namespaces:devices_thermostat:deviceName",
+            "order" : 2,
+            "type" : "select"
+         },
+         "unitTemperature" : {
+            "label" : "__unit_temperature_label__",
+            "optionLabels" : [
+               "°C",
+               "°F"
+            ],
+            "order" : 10,
+            "type" : "select"
+         },
+         "windowSensors" : {
+            "fields" : {
+               "item" : {
+                  "datasource" : "namespaces",
+                  "field" : "optionLabels",
+                  "optionLabels" : "namespaces:devices_sensorBinary:deviceName",
+                  "type" : "select"
+               }
+            },
+            "helper" : "__window_sensors_helper__",
+            "label" : "__window_sensors_label__",
+            "order" : 6
+         }
+      }
+   },
+   "repository" : {
+      "source" : "https://github.com/maros/Zway-AdvancedThermostatDevice",
+      "type" : "git"
+   },
+   "schema" : {
+      "properties" : {
+         "devices" : {
+            "items" : {
+               "datasource" : "namespaces",
+               "enum" : "namespaces:devices_switchBinary:deviceId",
+               "field" : "enum",
+               "required" : true
+            },
+            "minItems" : 1,
+            "type" : "array"
+         },
+         "hysteresis" : {
+            "maximum" : 5,
+            "minimum" : 0,
+            "required" : true,
+            "type" : "number"
+         },
+         "maxTemperature" : {
+            "type" : "number"
+         },
+         "maxTime" : {
+            "type" : "number"
+         },
+         "minTemperature" : {
+            "type" : "number"
+         },
+         "mode" : {
+            "enum" : [
+               "heat",
+               "cool"
+            ],
+            "required" : true
+         },
+         "pauseTime" : {
+            "type" : "number"
+         },
+         "switch" : {
+            "datasource" : "namespaces",
+            "enum" : "namespaces:devices_switchBinary:deviceId",
+            "field" : "enum"
+         },
+         "temperatureSensors" : {
+            "items" : {
+               "datasource" : "namespaces",
+               "enum" : "namespaces:devices_sensorMultilevel:deviceId",
+               "field" : "enum",
+               "required" : true
+            },
+            "minItems" : 1,
+            "type" : "array"
+         },
+         "thermostat" : {
+            "datasource" : "namespaces",
+            "enum" : "namespaces:devices_thermostat:deviceId",
+            "field" : "enum"
+         },
+         "unitTemperature" : {
+            "enum" : [
+               "celsius",
+               "fahrenheit"
+            ],
+            "required" : true
+         },
+         "windowSensors" : {
+            "items" : {
+               "datasource" : "namespaces",
+               "enum" : "namespaces:devices_sensorBinary:deviceId",
+               "field" : "enum",
+               "required" : true
+            },
+            "type" : "array"
+         }
+      },
+      "required" : false,
+      "type" : "object"
+   },
+   "singleton" : false,
+   "version" : "1.03"
+}
